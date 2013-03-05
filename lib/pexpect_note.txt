@@ -1,0 +1,1 @@
+I didn't want to install pexpect to my machine, so I just copied the 'pexpect.py' file from the pexpect directory to the pythoncorenlp directory, which is what needs pexpect. (pexpect's readme says one can do this).

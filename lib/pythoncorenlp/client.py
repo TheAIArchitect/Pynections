@@ -1,4 +1,5 @@
-import json
+#!/usr/bin/python
+import simplejson as json
 from jsonrpc import ServerProxy, JsonRpc20, TransportTcpIp
 from pprint import pprint
 

@@ -18,7 +18,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-import json, optparse, os, re, sys, time, traceback
+import optparse, os, re, sys, time, traceback
+import simplejson as json
 import jsonrpc, pexpect
 from progressbar import ProgressBar, Fraction
 from unidecode import unidecode
@@ -115,12 +116,12 @@ def parse_parser_results(text):
     return results
 
 
-class StanfordCoreNLP(object):
+class StanfordCoreNLP(object): 
     """
     Command-line interaction with Stanford's CoreNLP java utilities.
     Can be run as a JSON-RPC server or imported as a module.
     """
-    def __init__(self):
+    def __init__(self,stanford_corenlp_path_from_main="../stanford-corenlp-2012-07-09/",properties_location_from_main=""): ### EDITED by AweM
         """
         Checks the location of the jar files.
         Spawns the server as a process.
@@ -132,13 +133,13 @@ class StanfordCoreNLP(object):
        
         # if CoreNLP libraries are in a different directory,
         # change the corenlp_path variable to point to them
-        corenlp_path = "stanford-corenlp-2012-07-09/"
+        corenlp_path = stanford_corenlp_path_from_main #"../stanford-corenlp-2012-07-09/" ### EDITED by AweM
         
         java_path = "java"
         classname = "edu.stanford.nlp.pipeline.StanfordCoreNLP"
         # include the properties file, so you can change defaults
         # but any changes in output format will break parse_parser_results()
-        props = "-props default.properties" 
+        props = "-props "+properties_location_from_main+"default.properties" ### EDITED by AweM 
         
         # add and check classpaths
         jars = [corenlp_path + jar for jar in jars]
@@ -154,14 +155,23 @@ class StanfordCoreNLP(object):
         
         # show progress bar while loading the models
         widgets = ['Loading Models: ', Fraction()]
+        print "OKAY! 1"
         pbar = ProgressBar(widgets=widgets, maxval=5, force_update=True).start()
+        print "OKAY! 2"
         self.corenlp.expect("done.", timeout=20) # Load pos tagger model (~5sec)
+        print "OKAY! 3"
         pbar.update(1)
+        print "OKAY! 4"
         self.corenlp.expect("done.", timeout=200) # Load NER-all classifier (~33sec)
+        print "OKAY! 5"
         pbar.update(2)
+        print "OKAY! 6"
         self.corenlp.expect("done.", timeout=600) # Load NER-muc classifier (~60sec)
+        print "OKAY! 7"
         pbar.update(3)
+        print "OKAY! 8"
         self.corenlp.expect("done.", timeout=600) # Load CoNLL classifier (~50sec)
+        print "OKAY! 9"
         pbar.update(4)
         self.corenlp.expect("done.", timeout=200) # Loading PCFG (~3sec)
         pbar.update(5)
