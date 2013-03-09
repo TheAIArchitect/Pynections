@@ -8,8 +8,9 @@ from __future__ import division
 import urllib2
 import simplejson as json
 import admin
+import re
 
-class cnet_ifact:
+class cnet_iface:
 
     _base = "http://conceptnet5.media.mit.edu/data/5.1/"
     _lang = "en"
@@ -47,29 +48,31 @@ class cnet_ifact:
             self.log.critical("Error querying ConceptNet, could not connect!")
             raise # do I really want to raise an exception? Maybe we should try again a few times...
     
-    def similarity_check(self,opener,thing_one,thing_two):
+    def similarity_check(self, opener, thing_one, thing_two, limit):
         '''
         Use ConceptNet's association request to see how similar two concepts are.
         '''
-        request = self._base + "assoc/c/%s/%s?filter=/c/%s/%s&limit=1" % (self._lang,thing_one,self._lang,thing_two)
+        request = self._base + "assoc/c/%s/%s?filter=/c/%s/%s&limit=%s" % (self._lang,thing_one,self._lang,thing_two,limit)
         answer = self.get_page(request)
         try:
             similar = answer["similar"]
+            self.log.info("similarity check between '%s' and '%s'",thing_one, thing_two)
             for elem in similar:
                 self.log.info(elem)
             return similar
         except KeyError:
-            self.log.warning("No similarities returned for concepts: '%s' and '%s'.",thing_one,thing_two)
+            self.log.warning("No similarities returned for concepts: '%s' and '%s'.",thing_one, thing_two)
             return None
     
-    def associated_with(self,concept):
+    def associated_with(self, concept, limit):
         '''
         Use ConceptNet to see what concepts are associated with other concepts. Also returns the 'degree' of association.
         '''
-        request = self._base + "assoc/list/%s/%s" % (self._lang,concept)
+        request = self._base + "assoc/list/%s/%s&limit=%s" % (self._lang, concept,limit)
         answer = self.get_page(request)
         try:
             similar = answer["similar"]
+            self.log.info("similarities for concept '%s':",concept)
             for elem in similar:
                 self.log.info(elem)
             return similar
@@ -77,22 +80,65 @@ class cnet_ifact:
             self.log.warning("No associations returned for concept: %s.",concept)
             return None
     
-    def concept_info(self,concept):
+    def concept_info(self,concept, limit, keys = None):
         '''
         General query for ConceptNet. Returns information regarding the input concept.
+        
+        Takes a concept (word, phrase), limit (max edges to return), keys (a list of the desired values to be returned. If omitted, the standard list of 'edges' dictionaries is returned)
+        
+        If 'keys' is not omitted, then a list is returned, with each item being a dictionary containing the desired keys from each original edge -- IF the entry is present in any given edge.
+        When an entry is not present, the key is still included in the returned dictionary, but the corresponding value is "None".
         '''
-        request = self._base + "c/%s/%s?filter=/c/en"% (self._lang,concept)
+        concept = concept.lower() # concepts MUST be in lowercase
+        request = self._base + "c/%s/%s?filter=/c/en&limit=%s" % (self._lang, concept, limit)
+        self.log.debug(request)
         answer = self.get_page(request)
+        self.log.debug(answer)
+        no_append = False
         try:
             edges = answer["edges"]
-            for edge in edges:
-                try:
-                    for key in edge.keys():
-                        self.log.info("key: %s - %s",key,edge[key])
-                except KeyError:
-                    self.log.error("Key: '%s' is not present, but should be.",key)
+            if keys != None: # If function was called with  special list of keys to get, then get them if they exist.
+                edge_list = []
+                for edge in edges:
+                        edge_dict = {}
+                        self.log.info("edge for concept '%s':",concept)
+                        key_set = edge.keys()
+                        for key in keys:
+                            if key in key_set:
+                                try:
+                                    if key.__eq__("start") and re.match("/c/en/.*",edge[key]) == None:
+                                        print "not english: "+str(edge)
+                                        no_append = True
+                                        break
+                                    #self.log.info("key: %s - %s",key,edge[key])
+                                    edge_dict[key] = edge[key]
+                                except KeyError:
+                                    self.log.error("Key: '%s' is not present, but should be.",key)
+                                    edge_dict[key] = None            
+                            else:
+                                edge_dict[key] = None
+                        if not no_append:
+                            edge_list.append(edge_dict)
+                        no_append = False
+            else: # if function was not called with special list of keys to get, then get all keys.
+                edge_list = []
+                for edge in edges:
+                        edge_dict = {}
+                        self.log.info("edge for concept '%s':",concept)
+                        for key in edge.keys():
+                            try:
+                                #self.log.info("key: %s - %s",key,edge[key])
+                                edge_dict[key] = edge[key]
+                            except KeyError:
+                                self.log.error("Key: '%s' is not present, but should be.",key)
+                                edge_dict[key] = None
+                        edge_list.append(edge_dict)   
         except KeyError:
             self.log.warning("No edges returned for concept: %s.", concept)
+            edge_list = [] 
+        self.log.info(edge_list)
+        #print "edge_list is empty: "+str(edge_list == [])
+        return edge_list
     
     
 '''     

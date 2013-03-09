@@ -155,23 +155,14 @@ class StanfordCoreNLP(object):
         
         # show progress bar while loading the models
         widgets = ['Loading Models: ', Fraction()]
-        print "OKAY! 1"
         pbar = ProgressBar(widgets=widgets, maxval=5, force_update=True).start()
-        print "OKAY! 2"
         self.corenlp.expect("done.", timeout=20) # Load pos tagger model (~5sec)
-        print "OKAY! 3"
         pbar.update(1)
-        print "OKAY! 4"
         self.corenlp.expect("done.", timeout=200) # Load NER-all classifier (~33sec)
-        print "OKAY! 5"
         pbar.update(2)
-        print "OKAY! 6"
         self.corenlp.expect("done.", timeout=600) # Load NER-muc classifier (~60sec)
-        print "OKAY! 7"
         pbar.update(3)
-        print "OKAY! 8"
         self.corenlp.expect("done.", timeout=600) # Load CoNLL classifier (~50sec)
-        print "OKAY! 9"
         pbar.update(4)
         self.corenlp.expect("done.", timeout=200) # Loading PCFG (~3sec)
         pbar.update(5)
