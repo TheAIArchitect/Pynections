@@ -41,12 +41,19 @@ class cnet_iface:
         '''
         get request from ConceptNet
         '''
-        try:
-            page = self.opener.open(request)
-            return json.load(page)
-        except urllib2.HTTPError:
-            self.log.critical("Error querying ConceptNet, could not connect!")
-            raise # do I really want to raise an exception? Maybe we should try again a few times...
+        try_again = True
+        while try_again:
+            try:
+                page = self.opener.open(request)
+                return json.load(page)
+            except urllib2.HTTPError, urllib2.URLError:
+                self.log.critical("Error querying ConceptNet, could not connect!")
+                ans = raw_input("Try ConceptNet query again? (Y/n): ")
+                if ans.lower()[0] == "n":
+                    try_again = False
+                    self.log.warning("Exiting...")
+                    exit()
+                
     
     def similarity_check(self, opener, thing_one, thing_two, limit):
         '''
@@ -79,6 +86,7 @@ class cnet_iface:
         except KeyError:
             self.log.warning("No associations returned for concept: %s.",concept)
             return None
+        
     
     def concept_info(self,concept, limit, keys = None):
         '''
@@ -94,7 +102,7 @@ class cnet_iface:
         self.log.debug(request)
         answer = self.get_page(request)
         self.log.debug(answer)
-        no_append = False
+        append = True 
         try:
             edges = answer["edges"]
             if keys != None: # If function was called with  special list of keys to get, then get them if they exist.
@@ -107,19 +115,19 @@ class cnet_iface:
                             if key in key_set:
                                 try:
                                     if key.__eq__("start") and re.match("/c/en/.*",edge[key]) == None:
-                                        print "not english: "+str(edge)
-                                        no_append = True
+                                        self.log.debug("not english: "+str(edge))
+                                        append = False 
                                         break
-                                    #self.log.info("key: %s - %s",key,edge[key])
+                                    self.log.info("key: %s - %s",key,edge[key])
                                     edge_dict[key] = edge[key]
                                 except KeyError:
                                     self.log.error("Key: '%s' is not present, but should be.",key)
                                     edge_dict[key] = None            
                             else:
                                 edge_dict[key] = None
-                        if not no_append:
+                        if append:
                             edge_list.append(edge_dict)
-                        no_append = False
+                        append = True 
             else: # if function was not called with special list of keys to get, then get all keys.
                 edge_list = []
                 for edge in edges:

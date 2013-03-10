@@ -15,7 +15,7 @@ class LanguageProcessor:
     
     def __init__(self):
         self.corenlp = corenlp_iface.StanfordNLP()
-        self.log = admin.init_logger("cnet_iface", admin.LOG_MODE)
+        self.log = admin.init_logger("middleman", admin.LOG_MODE)
         
     def parse(self,text):
         parsed = self.corenlp.parse(text)
