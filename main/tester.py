@@ -7,7 +7,6 @@ Created on Mar 7, 2013
 This tests various things,
 '''
 import admin
-import middleman
 import conductor
 import gauntlet
 
