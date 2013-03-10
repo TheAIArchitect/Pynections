@@ -8,6 +8,7 @@ This tests various things,
 '''
 import admin
 import conductor
+import middleman
 import gauntlet
 
 my_conductor = conductor.conductor()
