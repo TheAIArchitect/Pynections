@@ -13,8 +13,13 @@ from pprint import pprint
 
 class LanguageProcessor:
     
-    def __init__(self):
-        self.corenlp = corenlp_iface.StanfordNLP()
+    def __init__(self, skip_corenlp_init = False):
+        ''' if 'skip_corenlp_init' is 'True', there will be no corenlp functionality, however, the class will load much much faster.
+        so, good to use when testing things that don't depend upon corenlp. 
+        '''
+        if not skip_corenlp_init:
+            self.corenlp = corenlp_iface.StanfordNLP()
+        self.cnet = cnet_iface.cnet_iface() 
         self.log = admin.init_logger("middleman", admin.LOG_MODE)
         
     def parse(self,text):
@@ -51,12 +56,11 @@ class LanguageProcessor:
             # From "get_concept_info": Interested in "score", "weight", "context", "rel"
             # From "associated_with": interested in 'similar' (this is a list of lists, each list has a concept and a number that is supposed to suggest the closeness of the association)
             # From "similarity_check": Interested in 'similar'. This is the same 
-            cnet = cnet_iface.cnet_iface()
             cnet_results = {}
             for concept in concept_list:
                 #cnet_results[lemma] = cnet.concept_info(concept)
                 self.log.info("lemma: %s",concept)
-                cnet_results[concept] = cnet.concept_info(concept,admin.NUM_EDGES_TO_RETURN,admin.EDGE_KEYS_IN_USE)
+                cnet_results[concept] = self.cnet.concept_info(concept,admin.NUM_EDGES_TO_RETURN,admin.EDGE_KEYS_IN_USE)
                 self.log.debug("ConceptNet Info for concept '%s' is:\n%s",concept,str(cnet_results[concept]))
                 #self.log.info("--=[ %s ]=--\n%s",lemma)
             return cnet_results # format:: key: concept => value: result of calling cnet.concept_info .. which is a list of the retured edges, each element  being a dictionary of information (JSON format)
@@ -75,12 +79,10 @@ class LanguageProcessor:
         NOTE: for sake of 'intuitiveness' lists that have '1' token per element are in dictionary '1',
         lists that have '2' tokens per element are in dictionary '2', etc.. So, there is no '0' key.
         
-        NOTE: This has a "token per element" limit of 4, as I 
         '''
         sub_powerset = {} 
         len_list = len(sentence_list)
         len_list_p = len_list +1
-        num_lists = (len_list*(len_list_p))/2 # we will return [m(m+1)]/2 lists, where 'm' is the number of words in the sentence.
         start = 0
         for offset in range(1,len_list_p):
             start = 0
@@ -93,7 +95,27 @@ class LanguageProcessor:
         self.log.debug(str(sub_powerset))#.replace("],","]\n")
         return sub_powerset
         
-    
-            
+    def do_similarity_check(self, original, replacement, should_swap_replacement_for_new_replacement = True):
+        ''' checks the similarity between 'original' and 'replacement'. Returns a list, [new_replacement, similarity], 
+        where 'new_replacement' is the concept returned by the similarity check.
+        
+        "should_swap_replacement_for_new_replacement" will return the concept returned by the similarity check as 'new_replacement', if True.
+        If false, it will return 'replacement' as 'new_replacement'. Note that if 'True', 'new_replacement' will have to be parsed -- as it will be in the form of
+        "/c/en/<actual concept>/<possible pos>/<possible disambiguation>". This can be done via 'gauntlet's 'concept_extractor'.
+        '''
+        result = self.cnet.similarity_check(original,replacement, 1) # we only want the best result
+        if len(result) > 0:
+            new_concept = result[0][0]
+            try:
+                new_concept_similarity = float(result[0][1])
+                self.log.debug("new concept: %s, similarity: %s", new_concept, result[0][1])
+            except ValueError:
+                self.log.error("Could not convert similarity to float. This is an issue... similarity set to '0'. This will neutralize potential replacement '%s'.",result[0][1],replacement)
+                new_concept_similarity = 0 
+            if should_swap_replacement_for_new_replacement:
+                return [new_concept, new_concept_similarity]
+            else:
+                return [replacement, new_concept_similarity]
+        return ["",0] # what else to do?
         
         

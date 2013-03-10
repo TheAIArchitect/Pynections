@@ -55,7 +55,7 @@ class cnet_iface:
                     exit()
                 
     
-    def similarity_check(self, opener, thing_one, thing_two, limit):
+    def similarity_check(self, thing_one, thing_two, limit):
         '''
         Use ConceptNet's association request to see how similar two concepts are.
         '''
@@ -63,9 +63,9 @@ class cnet_iface:
         answer = self.get_page(request)
         try:
             similar = answer["similar"]
-            self.log.info("similarity check between '%s' and '%s'",thing_one, thing_two)
+            self.log.debug("similarity check between '%s' and '%s'",thing_one, thing_two)
             for elem in similar:
-                self.log.info(elem)
+                self.log.debug(elem)
             return similar
         except KeyError:
             self.log.warning("No similarities returned for concepts: '%s' and '%s'.",thing_one, thing_two)
