@@ -46,7 +46,7 @@ class conductor:
         self.log.debug("keys: %s",str(cnqrd_keys))
         for key in cnqrd_keys:
             self.log.debug("key: %s -- %s",key,str(concept_net_query_result_dictionary[key]))
-        return lemmas_with_pos, concept_net_query_result_dictionary
+        return lemma_list, lemmas_with_pos, concept_net_query_result_dictionary
     
     def get_similarities_between_original_and_replacements(self, filtered_cnet_result_dictionary):
         ''' Goes through the filtered results and checks the similarity between each potential replacement and the 'key' (either the lemmatized version of a word from the initial sentence,
@@ -57,28 +57,20 @@ class conductor:
         
         Finally, each list of lists will be sorted in reverse order with respect to each inner list's potential (so, index '0' will contain the inner list with the greatest potential).
         
-        Note that as of now, we will be asking 'middleman.do_similarity_check" to return the concept that the similarity check returns. Because of this, 
-        'gauntlet's 'concept_extractor' must be used to get the actual concept out of ConceptNet's "concept notation" (I made that term up). 
         '''
         key_set = filtered_cnet_result_dictionary.keys()
         post_similarity_check_dict = {} 
-        temp_gauntlet = gauntlet.gauntlet() # note: I think I could probably make 'concept_extractor' a 'staticmethod' and not instantiate gauntlet again here, but for now, I don't want to mess about with that.
         for key in key_set:
             these_replacements = filtered_cnet_result_dictionary[key]
             list_of_potential_replacements = []
             for possible_replacement in these_replacements:
-                result = self.lang_proc.do_similarity_check(key, possible_replacement["start"][0], True) 
-                needs_extraction = result[0] # the concept (in 'concept notation')
+                result = self.lang_proc.do_similarity_check(key, possible_replacement["start"][0], False) 
                 similarity = result[1] # is already a float
-                if not needs_extraction == "":
-                    extracted = temp_gauntlet.concept_extractor(needs_extraction)
-                else:
-                    extracted = possible_replacement["start"][0] # the original replacement
                 potential = similarity * possible_replacement["validity"]
-                list_of_potential_replacements.append([extracted[0],potential]) 
+                list_of_potential_replacements.append([result[0],potential])
             list_of_potential_replacements.sort(key=lambda x: -x[1]) # sort in reverse order
             post_similarity_check_dict[key] = list_of_potential_replacements 
         for key in key_set:
             self.log.debug("key: %s -- %s",key,str(post_similarity_check_dict[key]))
         return post_similarity_check_dict
-             
+    

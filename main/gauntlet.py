@@ -164,27 +164,153 @@ class gauntlet:
             self.log.debug("key: %s -- %s",key,str(filtered_cnet_result_dict[key]))
         return filtered_cnet_result_dict
             
-    def order_potential_substitutions_by_similarity(self,initial,potential_replacements):
-        ''' This queries ConceptNet via cnet_iface's 'similarity_check' function for each (initial,potential_replacement[i]) pair, where 'i' is the i'th central replacment, 
-        and orders the potential replacements by the results of the queries. 
-        '''
-        
-        pass
-        
+            
     def select_alternate_concepts(self,lemma_list,conceptnet_lookup_results_dictionary):
         ''' This function takes a list of the lemmas of the sentence to be paraphrased (one per word), and the results from querying ConceptNet.
         The results from ConceptNet for each concept (each word, each pair of words, each set of 3 words, etc.) will be looked at: the more results a
         given concept has, the more likely we are to use it. An example would be if in a sentence, word 1 has 10 alternate concepts, and word two has 5 alternate concepts, 
         but words 1 and 2 (as a single concept) have 20 alternate concepts, then we put "1 and 2" as a more important alternative than the alternates for just 1 and just 2. 
         '''
-        
         # go through each key in the dictionary and see how many alternatives each one has (maybe do some Q.C. first/during)
         # eliminate conflicts: if we want to use an alt. concept for "eat dinner", we must make sure that we don't also include an alt. for "dinner" alone.
         # order the results?
         
+    def construct_new_sentences(self, cleaned_crunched_key_lists, post_similarity_check_dict):
+        ''' Goes through 'cleaned_crunched_key_list', and creates new sentences using the words (values) returned from using the keys from the crunched 
+        key list, and orders the sentences by summing the 'potential' values of all of the included words.
+        '''
+        all_sents = []
+        for key_list in cleaned_crunched_key_lists:
+            words_to_use = []
+            for key in key_list:
+                values = post_similarity_check_dict[key]
+                if values == []:
+                    values = [key, 0] # if for some reason, there aren't any alternatives (shoudn't be the case if the key/value pair has made it this far), then we just use the key, and set the potential to '0'.
+                words_to_use.append(values)
+            all_sents.append(words_to_use)
+        # now we have a list (all_sents), of lists (words_to_use), of lists (values), of 'word, potential' pairs.
+        for sent in all_sents:
+            self.log.debug("sent: %s",str(sent))
+            # call an altered version of the recursive cruncher (call it recursive word cruncher)
         
-    def create_alternate_sentences(self):
-        pass
+    def recursive_key_cruncher(self,crunched, to_crunch):
+        ''' recursivley creates a 'sub-powerset' of to_crunch. 
+        
+        Example: 
+        
+        if "to_crunch" is this: [[['the'], ['the', 'boy'], ['the', 'boy', 'went']], [['boy'], ['boy', 'went']], [['went'], ['went', 'home']], [['home']]]
+        
+        then the result will be:
+        
+        [[['home'], ['went'], ['boy'], ['the']]
+         [['home'], ['went', 'home'], ['boy'], ['the']]
+         [['home'], ['went'], ['boy', 'went'], ['the']]
+         [['home'], ['went', 'home'], ['boy', 'went'], ['the']]
+         [['home'], ['went'], ['boy'], ['the', 'boy']]
+         [['home'], ['went', 'home'], ['boy'], ['the', 'boy']]
+         [['home'], ['went'], ['boy', 'went'], ['the', 'boy']]
+         [['home'], ['went', 'home'], ['boy', 'went'], ['the', 'boy']]
+         [['home'], ['went'], ['boy'], ['the', 'boy', 'went']]
+         [['home'], ['went', 'home'], ['boy'], ['the', 'boy', 'went']]
+         [['home'], ['went'], ['boy', 'went'], ['the', 'boy', 'went']]
+         [['home'], ['went', 'home'], ['boy', 'went'], ['the', 'boy', 'went']]]
+         
+         the function, "clean up crunched keys" makes this more useful (see function for an example of it's output) by doing things like reversing the lists, 
+         removing duplicates, etc.
+        '''
+        if len(to_crunch) <= 1:
+            for key_list in to_crunch[0]:
+                crunched.append([key_list]) 
+            return crunched
+        elif crunched == []:
+            print "calling self:: to crunch is: ", str(to_crunch)
+            crunched = self.recursive_key_cruncher(crunched,to_crunch[1:])
+            print "returned. crunched is: ", str(crunched), " and to crunch is: ",str(to_crunch)
+        new_crunched = []
+        for key_list in to_crunch[0]:
+            print "key list in to_crunch: ", key_list
+            for other_key_list in crunched:
+                print other_key_list
+                concatted = other_key_list + [key_list]
+                print "concatted: "+str(concatted)
+                new_crunched.append(concatted) 
+        print "new_crunched is: \n"+str(new_crunched).replace("]],","]]\n")
+        return new_crunched
+
+    def clean_up_crunched_keys(self, lemma_list, crunched_keys):
+        ''' removes duplicate keys from the crunched_keys, and joins the inner key lists (so, a two word key that was split to look like ['the', 'boy'] will be joined to look like "the boy'.
+        
+        an example of the input can be found in "recusive_key_cruncher". The output from this function, assuming that input, will be:
+        
+        ['the', 'boy', 'went', 'home']
+        ['the', 'boy', 'went home']
+        ['the', 'boy went', 'home']
+        ['the boy', 'went', 'home']
+        ['the boy', 'went home']
+        ['the boy went', 'home']
+        
+        ''' 
+        cleaned_key_list_list = []
+        for key_list in crunched_keys:
+            key_list.reverse() # the cruncher ('recursive_key_cruncher') produced reversed lists. Now, we reverse the reversal.  
+            cleaned_key_list = []
+            used_lemmas = []
+            for key_as_list in key_list:
+                skip_this_key = False
+                for key_token in key_as_list:
+                    used_lemma = lemma_list.index(key_token)
+                    if used_lemma in used_lemmas:
+                        skip_this_key = True
+                        break
+                    used_lemmas.append(used_lemma)
+                if not skip_this_key:
+                    cleaned_key_list.append(' '.join(key_as_list))
+            cleaned_key_list_list.append(cleaned_key_list) 
+        no_duplicates = []
+        for inner_list in cleaned_key_list_list:
+            if inner_list in no_duplicates:
+                continue
+            no_duplicates.append(inner_list) 
+        return no_duplicates
+        
+        
+    def get_key_lists_for_new_sents(self, lemma_list, post_similarity_check_dict):
+        ''' go through and create lists of keys that represent the possible sentence formations, making sure to not include a concept twice.
+        For example, if the keys are ["i","go","to","the","mall","go to","the mall"], then one possible key list would be ["i","go","to","the","mall"], and another
+        would be, ["i","go to","the mall"]. We would want to eliminate the possibility of, ["i","go","go to","the","the mall"].
+        
+        These key lists will (in create_alternate_sentences), be used to get the values from the dictionary entries of the appropriate keys in each key list (in order).
+        '''
+        key_set = post_similarity_check_dict.keys()
+        keys_by_size = {}
+        num_words_in_sentence = len(lemma_list)
+        max_key_length = 0 # in terms of number of words in the key
+        for key in key_set:
+            split_key = key.split()
+            num_words = len(split_key)
+            if num_words > max_key_length:
+                max_key_length = num_words
+            if num_words in keys_by_size.keys():
+                keys_by_size[num_words].append(split_key)
+            else:
+                keys_by_size[num_words] = [split_key]
+        # now go through and find all keys containing the first lemma, then second lemma, etc.
+        ordered_key_lists = []
+        for i in range(0,num_words_in_sentence):
+            current_lemma = lemma_list[i]
+            keys_with_current_lemma = []
+            for j in range(1, max_key_length+1):
+                current_keys = keys_by_size[j]
+                for key in current_keys:
+                    if current_lemma in key:
+                        keys_with_current_lemma.append(key)
+            ordered_key_lists.append(keys_with_current_lemma) 
+        self.log.debug("ordered key lists: %s",str(ordered_key_lists))
+        crunched_keys = self.recursive_key_cruncher( [], ordered_key_lists)
+        cleaned_crunched_keys = self.clean_up_crunched_keys( lemma_list, crunched_keys)
+        return cleaned_crunched_keys
+        
+            
     
     
         

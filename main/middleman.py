@@ -108,7 +108,7 @@ class LanguageProcessor:
             new_concept = result[0][0]
             try:
                 new_concept_similarity = float(result[0][1])
-                self.log.debug("new concept: %s, similarity: %s", new_concept, result[0][1])
+                #self.log.debug("new concept: %s, similarity: %s", new_concept, result[0][1])
             except ValueError:
                 self.log.error("Could not convert similarity to float. This is an issue... similarity set to '0'. This will neutralize potential replacement '%s'.",result[0][1],replacement)
                 new_concept_similarity = 0 

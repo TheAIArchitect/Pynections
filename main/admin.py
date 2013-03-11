@@ -12,7 +12,7 @@ LOG_MODE = "debug"
 
 # ConceptNet constants
 EDGE_KEYS_IN_USE = ["start","end","rel","weight","score"]#"features","startLemmas","relLemmas","endLemmas","context","text","nodes","uri"] # just a guess / for testing
-NUM_EDGES_TO_RETURN = 5 # just a guess / for testing
+NUM_EDGES_TO_RETURN = 50 # just a guess / for testing
 
 # Stanford CoreNLP constants 
 
