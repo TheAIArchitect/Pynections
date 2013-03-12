@@ -1,0 +1,6 @@
+Alternative sentences for input sentence: 
+'The man ate a bagel this morning.' -- elapsed time: 98.2689349651 seconds.
+---------------------------------------------------------------------------------------
+1: the man eat a bagel this morning
+2: the man eat a bagel another morning
+3: the man eat a bagel that morning

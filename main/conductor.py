@@ -12,6 +12,7 @@ class conductor:
     
     def __init__(self):
         self.log = admin.init_logger("conductor", admin.LOG_MODE)
+        self.lang_proc = middleman.LanguageProcessor()
         
     def get_dict_entry(self, dict, entry):
         try:
@@ -21,7 +22,6 @@ class conductor:
         return None
     
     def get_alternate_concepts(self,sentence):
-        self.lang_proc = middleman.LanguageProcessor()
         parse_results, parse_tree = self.lang_proc.parse(sentence) # returns a list of lists. each list contains one word from the sentence in index '0', and a dictionary 
         # containing the following information (the keys are listed): 'NamedEntityTag', 'CharacterOffsetEnd', 'CharacterOffsetBegin', 'PartOfSpeech', and 'Lemma'
         lemmas_with_pos = {} # this will be a dictionary such that the key is the lemma, and the value is the part of speech 
@@ -65,6 +65,8 @@ class conductor:
             list_of_potential_replacements = []
             for possible_replacement in these_replacements:
                 result = self.lang_proc.do_similarity_check(key, possible_replacement["start"][0], False) 
+                if result[0] == "":
+                    continue
                 similarity = result[1] # is already a float
                 potential = similarity * possible_replacement["validity"]
                 list_of_potential_replacements.append([result[0],potential])

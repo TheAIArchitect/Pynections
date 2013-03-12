@@ -1,0 +1,5 @@
+Alternative sentences for input sentence: 
+'Running is a form of exercise.' -- elapsed time: 88.5434920788 seconds.
+---------------------------------------------------------------------------------------
+1: run creature a form of exercise
+2: run be a form of exercise

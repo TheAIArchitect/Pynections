@@ -79,7 +79,7 @@ class cnet_iface:
         answer = self.get_page(request)
         try:
             similar = answer["similar"]
-            self.log.info("similarities for concept '%s':",concept)
+            self.log.debug("similarities for concept '%s':",concept)
             for elem in similar:
                 self.log.info(elem)
             return similar
@@ -109,7 +109,7 @@ class cnet_iface:
                 edge_list = []
                 for edge in edges:
                         edge_dict = {}
-                        self.log.info("edge for concept '%s':",concept)
+                        self.log.debug("edge for concept '%s':",concept)
                         key_set = edge.keys()
                         for key in keys:
                             if key in key_set:
@@ -148,26 +148,4 @@ class cnet_iface:
         #print "edge_list is empty: "+str(edge_list == [])
         return edge_list
     
-    
-'''     
-JUST FOR IDEAS:
-
-        #result1 = similarity_check(opener,thing_one,thing_two)
-        #result2 = associated_with(opener,concept)
-        sentence = "I ate a delicious dinner."
-        sentence = sentence.strip(".?!")
-        sentence = sentence.lower()
-        print sentence
-        sentence_list = sentence.split(" ")
-        print sentence_list
-        combinations = sub_powerset(sentence_list)
-        print combinations["1"][0]
-        result3 = concept_info(opener,"eat")#combinations["1"][0])
-'''
-   
-class node:
-    
-    def __init__(self,node_type):
-        self.node_type = node_type
-
 

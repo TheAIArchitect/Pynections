@@ -1,0 +1,12 @@
+Alternative sentences for input sentence: 
+'Testing these sentences will take a long time.' -- elapsed time: 137.775852919 seconds.
+---------------------------------------------------------------------------------------
+1: test these sentence will take a long time
+2: test these conviction will take a long time
+3: test these sentence voluntary take a long time
+4: test these verdict will take a long time
+5: test these conviction voluntary take a long time
+6: test these sentence bequeath take a long time
+7: test these verdict voluntary take a long time
+8: test these conviction bequeath take a long time
+9: test these verdict bequeath take a long time

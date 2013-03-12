@@ -1,0 +1,5 @@
+Alternative sentences for input sentence: 
+'Parking tickets make people very unhappy.' -- elapsed time: 85.4727361202 seconds.
+---------------------------------------------------------------------------------------
+1: parking ticket make people very unhappy
+2: parking ticket make democracy very unhappy

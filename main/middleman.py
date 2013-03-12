@@ -66,7 +66,7 @@ class LanguageProcessor:
             return cnet_results # format:: key: concept => value: result of calling cnet.concept_info .. which is a list of the retured edges, each element  being a dictionary of information (JSON format)
                 
          
-    def sub_powerset(self,sentence_list):
+    def sub_powerset(self,sentence_list, max_tokens = admin.MAX_OFFSET):
         ''' Takes a sentence as a list, and returns a sub-powerset:
         if the sentence is: ['i', 'ate', 'a', 'delicious', 'dinner']
         then this function will return:
@@ -79,12 +79,19 @@ class LanguageProcessor:
         NOTE: for sake of 'intuitiveness' lists that have '1' token per element are in dictionary '1',
         lists that have '2' tokens per element are in dictionary '2', etc.. So, there is no '0' key.
         
+        if 'max_tokens' is present, then this will limit the number of words in each entry of the list.
+        So, for the example above, if max_tokens = 3, then  entries '4' and '5' wouldn't exist. 
+        
         '''
         sub_powerset = {} 
         len_list = len(sentence_list)
         len_list_p = len_list +1
         start = 0
-        for offset in range(1,len_list_p):
+        if max_tokens > 0 and max_tokens <= len_list_p:
+            max_offset = max_tokens + 1
+        else:
+            max_offset = len_list_p
+        for offset in range(1,max_offset):
             start = 0
             stop_at = len_list_p - offset
             inner_list = []
@@ -104,18 +111,21 @@ class LanguageProcessor:
         "/c/en/<actual concept>/<possible pos>/<possible disambiguation>". This can be done via 'gauntlet's 'concept_extractor'.
         '''
         result = self.cnet.similarity_check(original,replacement, 1) # we only want the best result
+        poor_replacement = False
         if len(result) > 0:
             new_concept = result[0][0]
             try:
-                new_concept_similarity = float(result[0][1])
+                concept_similarity = float(result[0][1])
+                if concept_similarity < admin.MIN_SIMILARITY:
+                    poor_replacement = True
                 #self.log.debug("new concept: %s, similarity: %s", new_concept, result[0][1])
             except ValueError:
                 self.log.error("Could not convert similarity to float. This is an issue... similarity set to '0'. This will neutralize potential replacement '%s'.",result[0][1],replacement)
-                new_concept_similarity = 0 
-            if should_swap_replacement_for_new_replacement:
-                return [new_concept, new_concept_similarity]
-            else:
-                return [replacement, new_concept_similarity]
+                concept_similarity = 0 
+            if not poor_replacement and should_swap_replacement_for_new_replacement:
+                return [new_concept, concept_similarity]
+            elif not poor_replacement:
+                return [replacement, concept_similarity]
         return ["",0] # what else to do?
         
         

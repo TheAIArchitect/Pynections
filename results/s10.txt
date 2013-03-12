@@ -1,0 +1,7 @@
+Alternative sentences for input sentence: 
+'I hope my train is on time today.' -- elapsed time: 144.267086983 seconds.
+---------------------------------------------------------------------------------------
+1: i hope my train creature on time this day
+2: i hope my train be on time this day
+3: i hope my train creature on time today
+4: i hope my train be on time today

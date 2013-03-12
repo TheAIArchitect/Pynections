@@ -1,0 +1,18 @@
+Alternative sentences for input sentence: 
+'Poor planning leads to missed deadlines.' -- elapsed time: 114.899367094 seconds.
+---------------------------------------------------------------------------------------
+1: poor planning lead to miss deadline
+2: poor man planning lead to miss deadline
+3: impoverish planning lead to miss deadline
+4: pitiable planning lead to miss deadline
+5: poor planning lead to m deadline
+6: inferior planning lead to miss deadline
+7: poor planning lead to mr deadline
+8: poor man planning lead to m deadline
+9: impoverish planning lead to m deadline
+10: pitiable planning lead to m deadline
+11: poor man planning lead to mr deadline
+12: inferior planning lead to m deadline
+13: impoverish planning lead to mr deadline
+14: pitiable planning lead to mr deadline
+15: inferior planning lead to mr deadline

@@ -5,6 +5,7 @@ Created on Mar 9, 2013
 '''
 import admin
 import re
+import math
 
 class gauntlet:
     
@@ -131,7 +132,7 @@ class gauntlet:
     
     def trim_useless_results(self, parsed_cnet_result_dict, lemmas_with_PoS):
         ''' removes results with the following relations: "HasContext", "Causes", "AtLocation", "DesireOf", "DerivedFrom", any others??
-        removes results that are identical to the concept that searched for them.
+        removes results that are identical to the concept that searched for them, except for one.
         Also removes results that are of the wrong part of speech (if part of speech is available for both concepts
         '''
         relations_to_remove = ["HasContext","Causes","AtLocation","DesireOf", "DerivedFrom"] 
@@ -145,16 +146,19 @@ class gauntlet:
                 this_PoS = lemmas_with_PoS[key].lower()
             else:
                 this_PoS = ""
+            already_have_self = False
             for this_edge in this_concepts_edges:
                 rel = this_edge["rel"]
                 if rel in relations_to_remove:  # search through the list of relations to remove
                     continue
                 start = this_edge["start"]
-                if key.__eq__(start[0]): # start[0] has the first part of the concept returned. If this matches the key, it's useless to us.
-                    continue
                 pos_test_result = self.pos_matcher(start[1], this_PoS) # make sure that both concepts have the same part of speech, if available
                 if pos_test_result < 0:
                     continue
+                if key.__eq__(start[0]) and already_have_self: # start[0] has the first part of the concept returned. If this matches the key, and we already have one of them, it's useless to us.
+                    continue
+                elif key.__eq__(start[0]) and not already_have_self:
+                    already_have_self = True
                 # if we've made it to this point, then the edge in question has survived this round
                 filtered_edge_list.append(this_edge)
             filtered_cnet_result_dict[key] = filtered_edge_list
@@ -164,34 +168,98 @@ class gauntlet:
             self.log.debug("key: %s -- %s",key,str(filtered_cnet_result_dict[key]))
         return filtered_cnet_result_dict
             
-            
-    def select_alternate_concepts(self,lemma_list,conceptnet_lookup_results_dictionary):
-        ''' This function takes a list of the lemmas of the sentence to be paraphrased (one per word), and the results from querying ConceptNet.
-        The results from ConceptNet for each concept (each word, each pair of words, each set of 3 words, etc.) will be looked at: the more results a
-        given concept has, the more likely we are to use it. An example would be if in a sentence, word 1 has 10 alternate concepts, and word two has 5 alternate concepts, 
-        but words 1 and 2 (as a single concept) have 20 alternate concepts, then we put "1 and 2" as a more important alternative than the alternates for just 1 and just 2. 
-        '''
-        # go through each key in the dictionary and see how many alternatives each one has (maybe do some Q.C. first/during)
-        # eliminate conflicts: if we want to use an alt. concept for "eat dinner", we must make sure that we don't also include an alt. for "dinner" alone.
-        # order the results?
         
-    def construct_new_sentences(self, cleaned_crunched_key_lists, post_similarity_check_dict):
+    def recursive_word_cruncher(self, crunched, to_crunch):
+        '''
+         recursivley creates a 'sub-powerset' of to_crunch. 
+        
+        Example: 
+        
+        if "to_crunch" is this: [[[u'the', 0]], [[u'youth', 11.460714142537345], [u'lad', 11.391008176951122], [u'knave', 8.49783901939474], [u'youngster', 7.573010472817153], [u'brat', 5.202898618408794], [u'squirt', 2.3434551478981027]], [[u'function', 10.596036784448875], [u'go_out', 10.30612302880372], [u'move', 10.045768601954014], [u'depart', 8.141258341059633], [u'disappear', 4.819472202991524], [u'fit', 4.784107401547051], [u'become', 4.527248136527457], [u'pee', 2.353389290522724], [u'belong', 1.4693674210055763], [u'crumble', 1.316681780184853]], [[u'tenement', 9.446888942871352], [u'home_base', 1.3779554464642316]]] 
+        '''
+    
+        if len(to_crunch) <= 1:
+            for key_list in to_crunch[0]:
+                crunched.append([key_list]) 
+            return crunched
+        elif crunched == []:
+            #print "calling self:: to crunch is: ", str(to_crunch)
+            crunched = self.recursive_word_cruncher(crunched,to_crunch[1:])
+            #print "returned. crunched is: ", str(crunched), " and to crunch is: ",str(to_crunch)
+        new_crunched = []
+        for key_list in to_crunch[0]:
+            #print "key list in to_crunch: ", key_list
+            for other_key_list in crunched:
+                #print other_key_list
+                concatted = other_key_list + [key_list]
+                #print "concatted: "+str(concatted)
+                new_crunched.append(concatted) 
+        self.log.debug("new_crunched is: \n%s",str(new_crunched).replace("]],","]]\n"))
+        return new_crunched
+    
+    
+    def clean_crunched_sents(self, crunched_sents):
+        ''' takes the crunched sentences out of list format, makes them readable, and aggregates the potential for each sentence (sums it from the potentials of each concept)
+        '''
+        sentences_with_potential = []
+        for crunched_sent in crunched_sents:
+            crunched_sent.reverse()
+            words = [] 
+            total_potential = 0
+            for word in crunched_sent:
+                if word[0] == '':
+                    words.append
+                words.append(word[0]) # this is the word part of 'word', though it doesn't actually have to be a single word (can be two words separated by an underscore)
+                total_potential += word[1]
+                joined_words = ' '.join(words)
+            sentences_with_potential.append([joined_words.replace("_"," "),total_potential])
+        no_duplicates = []
+        for inner_list in sentences_with_potential:
+            if inner_list in no_duplicates:
+                continue
+            no_duplicates.append(inner_list) 
+        return no_duplicates 
+        
+    def construct_new_sentences(self, cleaned_crunched_key_lists, post_similarity_check_dict, best_percentage = admin.BEST_PERCENTAGE ):
         ''' Goes through 'cleaned_crunched_key_list', and creates new sentences using the words (values) returned from using the keys from the crunched 
         key list, and orders the sentences by summing the 'potential' values of all of the included words.
         '''
         all_sents = []
+        pscd_keys = post_similarity_check_dict.keys()
+        self.log.debug("post_similarity_check_dict.keys(): %s",str(pscd_keys))
         for key_list in cleaned_crunched_key_lists:
             words_to_use = []
             for key in key_list:
+                if key not in pscd_keys:
+                    post_similarity_check_dict[key] = [[key,0]]
                 values = post_similarity_check_dict[key]
-                if values == []:
-                    values = [key, 0] # if for some reason, there aren't any alternatives (shoudn't be the case if the key/value pair has made it this far), then we just use the key, and set the potential to '0'.
+                values.append([key, 0]) # add the key (the lemmatized version of the initial word), and set the potential to '0'. Could be useful to have this here (i.e. it may stop things from breaking if there aren't results for a concept).
                 words_to_use.append(values)
             all_sents.append(words_to_use)
         # now we have a list (all_sents), of lists (words_to_use), of lists (values), of 'word, potential' pairs.
+        sentences_with_potential = []
         for sent in all_sents:
             self.log.debug("sent: %s",str(sent))
-            # call an altered version of the recursive cruncher (call it recursive word cruncher)
+            crunched_sents = self.recursive_word_cruncher([], sent)
+            sorted_cleaned_sents = self.clean_crunched_sents(crunched_sents)
+            sentences_with_potential += sorted_cleaned_sents
+        sentences_with_potential.sort(key=lambda x: -x[1])
+        self.log.debug("sentences with potential: \n%s", str(sentences_with_potential).replace("], [","]\n["))
+        num_sents = len(sentences_with_potential)
+        num_to_take = int(math.ceil((best_percentage/100.0)*num_sents))
+        no_dups = []
+        for sent in sentences_with_potential:
+            if sent[0] in no_dups:
+                continue
+            else:
+                no_dups.append(sent[0])
+        if num_to_take > admin.MAX_RESULTS:
+            num_to_take = admin.MAX_RESULTS
+        len_no_dups = len(no_dups)
+        if num_to_take > len_no_dups:
+            num_to_take = len_no_dups
+        return no_dups[0:num_to_take]
+        
         
     def recursive_key_cruncher(self,crunched, to_crunch):
         ''' recursivley creates a 'sub-powerset' of to_crunch. 
@@ -223,18 +291,18 @@ class gauntlet:
                 crunched.append([key_list]) 
             return crunched
         elif crunched == []:
-            print "calling self:: to crunch is: ", str(to_crunch)
+            #print "calling self:: to crunch is: ", str(to_crunch)
             crunched = self.recursive_key_cruncher(crunched,to_crunch[1:])
-            print "returned. crunched is: ", str(crunched), " and to crunch is: ",str(to_crunch)
+            #print "returned. crunched is: ", str(crunched), " and to crunch is: ",str(to_crunch)
         new_crunched = []
         for key_list in to_crunch[0]:
-            print "key list in to_crunch: ", key_list
+            #print "key list in to_crunch: ", key_list
             for other_key_list in crunched:
-                print other_key_list
+                #print other_key_list
                 concatted = other_key_list + [key_list]
-                print "concatted: "+str(concatted)
+                #print "concatted: "+str(concatted)
                 new_crunched.append(concatted) 
-        print "new_crunched is: \n"+str(new_crunched).replace("]],","]]\n")
+        self.log.debug("new_crunched is: \n%s", str(new_crunched).replace("]],","]]\n"))
         return new_crunched
 
     def clean_up_crunched_keys(self, lemma_list, crunched_keys):
@@ -257,11 +325,19 @@ class gauntlet:
             used_lemmas = []
             for key_as_list in key_list:
                 skip_this_key = False
-                for key_token in key_as_list:
-                    used_lemma = lemma_list.index(key_token)
-                    if used_lemma in used_lemmas:
-                        skip_this_key = True
-                        break
+                for key_token in key_as_list: # Make sure to account for double/ triple occurrences of the same word!
+                    may_be_multiple_occurrences = True
+                    used_lemma = -1
+                    while may_be_multiple_occurrences:
+                        try:
+                            used_lemma = lemma_list.index(key_token, used_lemma+1)
+                            if used_lemma in used_lemmas:
+                                continue # try again
+                            else:
+                                break # everything is alright
+                        except ValueError:
+                                skip_this_key = True
+                                break
                     used_lemmas.append(used_lemma)
                 if not skip_this_key:
                     cleaned_key_list.append(' '.join(key_as_list))
@@ -304,6 +380,8 @@ class gauntlet:
                 for key in current_keys:
                     if current_lemma in key:
                         keys_with_current_lemma.append(key)
+            if keys_with_current_lemma == []:
+                keys_with_current_lemma.append([str(current_lemma)]) # if there are no keys, then add in the current_lemma, but first make it a string (instead of the unicode string it was), and wrap it in a list so it is in the proper format.
             ordered_key_lists.append(keys_with_current_lemma) 
         self.log.debug("ordered key lists: %s",str(ordered_key_lists))
         crunched_keys = self.recursive_key_cruncher( [], ordered_key_lists)

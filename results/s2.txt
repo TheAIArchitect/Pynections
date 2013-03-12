@@ -1,0 +1,129 @@
+Alternative sentences for input sentence: 
+'He returned to his house in the evening.' -- elapsed time: 154.21658206 seconds.
+---------------------------------------------------------------------------------------
+1: he return to he window in the evening
+2: he return to he window within the evening
+3: he return to he window inside the evening
+4: he return to he window into the evening
+5: he return to he window inner the evening
+6: he return to he house in the evening
+7: he return to he house within the evening
+8: he return to he house inside the evening
+9: he return to he window innermost the evening
+10: he return to he house into the evening
+11: he return to he window in turn the evening
+12: he return to he house inner the evening
+13: he return to it window in the evening
+14: it return to he window in the evening
+15: he return to he house innermost the evening
+16: he return to it window within the evening
+17: it return to he window within the evening
+18: he return to it window inside the evening
+19: it return to he window inside the evening
+20: he return to it window into the evening
+21: it return to he window into the evening
+22: he return to he house in turn the evening
+23: he return to his window in the evening
+24: his return to he window in the evening
+25: he return to his window within the evening
+26: his return to he window within the evening
+27: he return to his window inside the evening
+28: his return to he window inside the evening
+29: he return to it window inner the evening
+30: it return to he window inner the evening
+31: he return to it house in the evening
+32: it return to he house in the evening
+33: he return to his window into the evening
+34: his return to he window into the evening
+35: he return to it house within the evening
+36: it return to he house within the evening
+37: he return to it house inside the evening
+38: it return to he house inside the evening
+39: he return to it window innermost the evening
+40: it return to he window innermost the evening
+41: he return to it house into the evening
+42: it return to he house into the evening
+43: he return to his window inner the evening
+44: his return to he window inner the evening
+45: he return to his house in the evening
+46: his return to he house in the evening
+47: he return to it window in turn the evening
+48: it return to he window in turn the evening
+49: he return to his house within the evening
+50: his return to he house within the evening
+51: he return to his house inside the evening
+52: his return to he house inside the evening
+53: he return to his window innermost the evening
+54: his return to he window innermost the evening
+55: he return to it house inner the evening
+56: it return to he house inner the evening
+57: he return to his house into the evening
+58: his return to he house into the evening
+59: it return to it window in the evening
+60: he return to it house innermost the evening
+61: it return to he house innermost the evening
+62: it return to it window within the evening
+63: it return to it window inside the evening
+64: he return to his window in turn the evening
+65: his return to he window in turn the evening
+66: it return to it window into the evening
+67: he return to his house inner the evening
+68: his return to he house inner the evening
+69: he return to it house in turn the evening
+70: it return to he house in turn the evening
+71: it return to his window in the evening
+72: his return to it window in the evening
+73: he return to his house innermost the evening
+74: his return to he house innermost the evening
+75: it return to his window within the evening
+76: his return to it window within the evening
+77: it return to his window inside the evening
+78: his return to it window inside the evening
+79: it return to it window inner the evening
+80: it return to it house in the evening
+81: it return to his window into the evening
+82: his return to it window into the evening
+83: it return to it house within the evening
+84: it return to it house inside the evening
+85: it return to it window innermost the evening
+86: he return to his house in turn the evening
+87: his return to he house in turn the evening
+88: his return to his window in the evening
+89: it return to it house into the evening
+90: his return to his window within the evening
+91: his return to his window inside the evening
+92: it return to his window inner the evening
+93: his return to it window inner the evening
+94: it return to his house in the evening
+95: his return to it house in the evening
+96: his return to his window into the evening
+97: it return to it window in turn the evening
+98: it return to his house within the evening
+99: his return to it house within the evening
+100: it return to his house inside the evening
+101: his return to it house inside the evening
+102: it return to his window innermost the evening
+103: his return to it window innermost the evening
+104: it return to it house inner the evening
+105: it return to his house into the evening
+106: his return to it house into the evening
+107: it return to it house innermost the evening
+108: his return to his window inner the evening
+109: his return to his house in the evening
+110: it return to his window in turn the evening
+111: his return to it window in turn the evening
+112: his return to his house within the evening
+113: his return to his house inside the evening
+114: his return to his window innermost the evening
+115: it return to his house inner the evening
+116: his return to it house inner the evening
+117: his return to his house into the evening
+118: it return to it house in turn the evening
+119: it return to his house innermost the evening
+120: his return to it house innermost the evening
+121: his return to his window in turn the evening
+122: his return to his house inner the evening
+123: it return to his house in turn the evening
+124: his return to it house in turn the evening
+125: his return to his house innermost the evening
+126: his return to his house in turn the evening

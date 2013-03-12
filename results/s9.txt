@@ -1,0 +1,23 @@
+Alternative sentences for input sentence: 
+'I have a little dog.' -- elapsed time: 87.5970680714 seconds.
+---------------------------------------------------------------------------------------
+1: i have a little dog
+2: i have a little animal
+3: i have a li dog
+4: i have a little by little dog
+5: i have a little bite dog
+6: i have a li animal
+7: i have a little by little animal
+8: i have a bite dog
+9: i have a little bite animal
+10: i have a bite animal
+11: i have a little cad
+12: i have a little canis familiaris
+13: i have a li cad
+14: i have a little by little cad
+15: i have a little bite cad
+16: i have a li canis familiaris
+17: i have a bite cad
+18: i have a little by little canis familiaris
+19: i have a little bite canis familiaris
+20: i have a bite canis familiaris

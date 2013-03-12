@@ -1,0 +1,11 @@
+Alternative sentences for input sentence: 
+'James likes to drink and play pool.' -- elapsed time: 183.238234043 seconds.
+---------------------------------------------------------------------------------------
+1: jame like to drink and play pool
+2: jame like to drink & play pool
+3: jame like to drink or play pool
+4: jame like to drink as well as play pool
+5: jame favorite to drink and play pool
+6: jame favorite to drink & play pool
+7: jame favorite to drink or play pool
+8: jame favorite to drink as well as play pool

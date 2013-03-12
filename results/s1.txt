@@ -1,0 +1,303 @@
+Alternative sentences for input sentence: 
+'The boy went to the field and kicked the soccer ball.' -- elapsed time: 295.08947897 seconds.
+---------------------------------------------------------------------------------------
+1: the boy go to the field and kick the soccer ball
+2: the boy go to the field & kick the soccer ball
+3: the boy go to the field or kick the soccer ball
+4: the boy go to the field and kick the football ball
+5: the boy go to the field & kick the football ball
+6: the boy go to the field and kick the association football ball
+7: the boy go to the field & kick the association football ball
+8: the boy go to the field as well as kick the soccer ball
+9: the boy go to the field or kick the football ball
+10: the boy function to the field and kick the soccer ball
+11: the boy function to the field & kick the soccer ball
+12: the boy go to the field or kick the association football ball
+13: the boy go out to the field and kick the soccer ball
+14: the boy go out to the field & kick the soccer ball
+15: the boy go to the field as well as kick the football ball
+16: the boy function to the field or kick the soccer ball
+17: the boy move to the field and kick the soccer ball
+18: the boy move to the field & kick the soccer ball
+19: the boy function to the field and kick the football ball
+20: the boy function to the field & kick the football ball
+21: the boy go out to the field or kick the soccer ball
+22: the boy go to the field as well as kick the association football ball
+23: the boy go out to the field and kick the football ball
+24: the boy go out to the field & kick the football ball
+25: the boy function to the field and kick the association football ball
+26: the boy function to the field & kick the association football ball
+27: the boy move to the field or kick the soccer ball
+28: the boy function to the field as well as kick the soccer ball
+29: the boy function to the field or kick the football ball
+30: the boy move to the field and kick the football ball
+31: the boy move to the field & kick the football ball
+32: the boy go out to the field and kick the association football ball
+33: the boy go out to the field & kick the association football ball
+34: the boy go out to the field as well as kick the soccer ball
+35: the boy go out to the field or kick the football ball
+36: the boy function to the field or kick the association football ball
+37: the boy move to the field and kick the association football ball
+38: the boy move to the field & kick the association football ball
+39: the boy move to the field as well as kick the soccer ball
+40: the boy move to the field or kick the football ball
+41: the boy function to the field as well as kick the football ball
+42: the boy go out to the field or kick the association football ball
+43: the boy move to the field or kick the association football ball
+44: the boy go out to the field as well as kick the football ball
+45: the boy function to the field as well as kick the association football ball
+46: the boy move to the field as well as kick the football ball
+47: the boy go out to the field as well as kick the association football ball
+48: the boy move to the field as well as kick the association football ball
+49: the boy depart to the field and kick the soccer ball
+50: the boy depart to the field & kick the soccer ball
+51: the boy depart to the field or kick the soccer ball
+52: the boy depart to the field and kick the football ball
+53: the boy depart to the field & kick the football ball
+54: the boy depart to the field and kick the association football ball
+55: the boy depart to the field & kick the association football ball
+56: the boy depart to the field as well as kick the soccer ball
+57: the boy depart to the field or kick the football ball
+58: the boy depart to the field or kick the association football ball
+59: the boy depart to the field as well as kick the football ball
+60: the boy depart to the field as well as kick the association football ball
+61: the youth go to the field and kick the soccer ball
+62: the youth go to the field & kick the soccer ball
+63: the lad go to the field and kick the soccer ball
+64: the lad go to the field & kick the soccer ball
+65: the youth go to the field or kick the soccer ball
+66: the lad go to the field or kick the soccer ball
+67: the youth go to the field and kick the football ball
+68: the youth go to the field & kick the football ball
+69: the lad go to the field and kick the football ball
+70: the lad go to the field & kick the football ball
+71: the youth go to the field and kick the association football ball
+72: the youth go to the field & kick the association football ball
+73: the youth go to the field as well as kick the soccer ball
+74: the youth go to the field or kick the football ball
+75: the lad go to the field and kick the association football ball
+76: the lad go to the field & kick the association football ball
+77: the lad go to the field as well as kick the soccer ball
+78: the lad go to the field or kick the football ball
+79: the youth function to the field and kick the soccer ball
+80: the youth function to the field & kick the soccer ball
+81: the lad function to the field and kick the soccer ball
+82: the lad function to the field & kick the soccer ball
+83: the youth go to the field or kick the association football ball
+84: the lad go to the field or kick the association football ball
+85: the youth go out to the field and kick the soccer ball
+86: the youth go out to the field & kick the soccer ball
+87: the youth go to the field as well as kick the football ball
+88: the lad go out to the field and kick the soccer ball
+89: the lad go out to the field & kick the soccer ball
+90: the youth function to the field or kick the soccer ball
+91: the lad go to the field as well as kick the football ball
+92: the lad function to the field or kick the soccer ball
+93: the youth move to the field and kick the soccer ball
+94: the youth move to the field & kick the soccer ball
+95: the youth function to the field and kick the football ball
+96: the youth function to the field & kick the football ball
+97: the lad move to the field and kick the soccer ball
+98: the lad move to the field & kick the soccer ball
+99: the youth go out to the field or kick the soccer ball
+100: the youth go to the field as well as kick the association football ball
+101: the lad function to the field and kick the football ball
+102: the lad function to the field & kick the football ball
+103: the lad go out to the field or kick the soccer ball
+104: the lad go to the field as well as kick the association football ball
+105: the youth go out to the field and kick the football ball
+106: the youth go out to the field & kick the football ball
+107: the youth function to the field and kick the association football ball
+108: the youth function to the field & kick the association football ball
+109: the youth move to the field or kick the soccer ball
+110: the lad go out to the field and kick the football ball
+111: the lad go out to the field & kick the football ball
+112: the youth function to the field as well as kick the soccer ball
+113: the youth function to the field or kick the football ball
+114: the lad function to the field and kick the association football ball
+115: the lad function to the field & kick the association football ball
+116: the lad move to the field or kick the soccer ball
+117: the lad function to the field as well as kick the soccer ball
+118: the lad function to the field or kick the football ball
+119: the youth move to the field and kick the football ball
+120: the youth move to the field & kick the football ball
+121: the youth go out to the field and kick the association football ball
+122: the youth go out to the field & kick the association football ball
+123: the lad move to the field and kick the football ball
+124: the lad move to the field & kick the football ball
+125: the youth go out to the field as well as kick the soccer ball
+126: the youth go out to the field or kick the football ball
+127: the lad go out to the field and kick the association football ball
+128: the lad go out to the field & kick the association football ball
+129: the youth function to the field or kick the association football ball
+130: the lad go out to the field as well as kick the soccer ball
+131: the lad go out to the field or kick the football ball
+132: the lad function to the field or kick the association football ball
+133: the youth move to the field and kick the association football ball
+134: the youth move to the field & kick the association football ball
+135: the youth move to the field as well as kick the soccer ball
+136: the youth move to the field or kick the football ball
+137: the lad move to the field and kick the association football ball
+138: the lad move to the field & kick the association football ball
+139: the youth function to the field as well as kick the football ball
+140: the youth go out to the field or kick the association football ball
+141: the lad move to the field as well as kick the soccer ball
+142: the lad move to the field or kick the football ball
+143: the lad function to the field as well as kick the football ball
+144: the lad go out to the field or kick the association football ball
+145: the knave go to the field and kick the soccer ball
+146: the knave go to the field & kick the soccer ball
+147: the youth move to the field or kick the association football ball
+148: the youth go out to the field as well as kick the football ball
+149: the youth function to the field as well as kick the association football ball
+150: the lad move to the field or kick the association football ball
+151: the lad go out to the field as well as kick the football ball
+152: the lad function to the field as well as kick the association football ball
+153: the youth move to the field as well as kick the football ball
+154: the knave go to the field or kick the soccer ball
+155: the youth go out to the field as well as kick the association football ball
+156: the lad move to the field as well as kick the football ball
+157: the lad go out to the field as well as kick the association football ball
+158: the knave go to the field and kick the football ball
+159: the knave go to the field & kick the football ball
+160: the youth move to the field as well as kick the association football ball
+161: the youth depart to the field and kick the soccer ball
+162: the youth depart to the field & kick the soccer ball
+163: the lad move to the field as well as kick the association football ball
+164: the lad depart to the field and kick the soccer ball
+165: the lad depart to the field & kick the soccer ball
+166: the knave go to the field and kick the association football ball
+167: the knave go to the field & kick the association football ball
+168: the youngster go to the field and kick the soccer ball
+169: the youngster go to the field & kick the soccer ball
+170: the knave go to the field as well as kick the soccer ball
+171: the knave go to the field or kick the football ball
+172: the youth depart to the field or kick the soccer ball
+173: the lad depart to the field or kick the soccer ball
+174: the knave function to the field and kick the soccer ball
+175: the knave function to the field & kick the soccer ball
+176: the knave go to the field or kick the association football ball
+177: the youngster go to the field or kick the soccer ball
+178: the youth depart to the field and kick the football ball
+179: the youth depart to the field & kick the football ball
+180: the lad depart to the field and kick the football ball
+181: the lad depart to the field & kick the football ball
+182: the knave go out to the field and kick the soccer ball
+183: the knave go out to the field & kick the soccer ball
+184: the youngster go to the field and kick the football ball
+185: the youngster go to the field & kick the football ball
+186: the knave go to the field as well as kick the football ball
+187: the knave function to the field or kick the soccer ball
+188: the youth depart to the field and kick the association football ball
+189: the youth depart to the field & kick the association football ball
+190: the youth depart to the field as well as kick the soccer ball
+191: the youth depart to the field or kick the football ball
+192: the lad depart to the field and kick the association football ball
+193: the lad depart to the field & kick the association football ball
+194: the lad depart to the field as well as kick the soccer ball
+195: the lad depart to the field or kick the football ball
+196: the knave move to the field and kick the soccer ball
+197: the knave move to the field & kick the soccer ball
+198: the knave function to the field and kick the football ball
+199: the knave function to the field & kick the football ball
+200: the youngster go to the field and kick the association football ball
+201: the youngster go to the field & kick the association football ball
+202: the knave go out to the field or kick the soccer ball
+203: the knave go to the field as well as kick the association football ball
+204: the youngster go to the field as well as kick the soccer ball
+205: the youngster go to the field or kick the football ball
+206: the youth depart to the field or kick the association football ball
+207: the lad depart to the field or kick the association football ball
+208: the knave go out to the field and kick the football ball
+209: the knave go out to the field & kick the football ball
+210: the knave function to the field and kick the association football ball
+211: the knave function to the field & kick the association football ball
+212: the knave move to the field or kick the soccer ball
+213: the youngster function to the field and kick the soccer ball
+214: the youngster function to the field & kick the soccer ball
+215: the knave function to the field as well as kick the soccer ball
+216: the knave function to the field or kick the football ball
+217: the youngster go to the field or kick the association football ball
+218: the youth depart to the field as well as kick the football ball
+219: the lad depart to the field as well as kick the football ball
+220: the knave move to the field and kick the football ball
+221: the knave move to the field & kick the football ball
+222: the knave go out to the field and kick the association football ball
+223: the knave go out to the field & kick the association football ball
+224: the youngster go out to the field and kick the soccer ball
+225: the youngster go out to the field & kick the soccer ball
+226: the knave go out to the field as well as kick the soccer ball
+227: the knave go out to the field or kick the football ball
+228: the youngster go to the field as well as kick the football ball
+229: the knave function to the field or kick the association football ball
+230: the youngster function to the field or kick the soccer ball
+231: the youth depart to the field as well as kick the association football ball
+232: the lad depart to the field as well as kick the association football ball
+233: the knave move to the field and kick the association football ball
+234: the knave move to the field & kick the association football ball
+235: the youngster move to the field and kick the soccer ball
+236: the youngster move to the field & kick the soccer ball
+237: the knave move to the field as well as kick the soccer ball
+238: the knave move to the field or kick the football ball
+239: the youngster function to the field and kick the football ball
+240: the youngster function to the field & kick the football ball
+241: the knave function to the field as well as kick the football ball
+242: the knave go out to the field or kick the association football ball
+243: the youngster go out to the field or kick the soccer ball
+244: the youngster go to the field as well as kick the association football ball
+245: the youngster go out to the field and kick the football ball
+246: the youngster go out to the field & kick the football ball
+247: the knave move to the field or kick the association football ball
+248: the youngster function to the field and kick the association football ball
+249: the youngster function to the field & kick the association football ball
+250: the youngster move to the field or kick the soccer ball
+251: the knave go out to the field as well as kick the football ball
+252: the knave function to the field as well as kick the association football ball
+253: the youngster function to the field as well as kick the soccer ball
+254: the youngster function to the field or kick the football ball
+255: the youngster move to the field and kick the football ball
+256: the youngster move to the field & kick the football ball
+257: the knave move to the field as well as kick the football ball
+258: the youngster go out to the field and kick the association football ball
+259: the youngster go out to the field & kick the association football ball
+260: the knave go out to the field as well as kick the association football ball
+261: the youngster go out to the field as well as kick the soccer ball
+262: the youngster go out to the field or kick the football ball
+263: the youngster function to the field or kick the association football ball
+264: the youngster move to the field and kick the association football ball
+265: the youngster move to the field & kick the association football ball
+266: the knave move to the field as well as kick the association football ball
+267: the youngster move to the field as well as kick the soccer ball
+268: the youngster move to the field or kick the football ball
+269: the knave depart to the field and kick the soccer ball
+270: the knave depart to the field & kick the soccer ball
+271: the youngster function to the field as well as kick the football ball
+272: the youngster go out to the field or kick the association football ball
+273: the youngster move to the field or kick the association football ball
+274: the youngster go out to the field as well as kick the football ball
+275: the youngster function to the field as well as kick the association football ball
+276: the knave depart to the field or kick the soccer ball
+277: the youngster move to the field as well as kick the football ball
+278: the knave depart to the field and kick the football ball
+279: the knave depart to the field & kick the football ball
+280: the youngster go out to the field as well as kick the association football ball
+281: the youngster move to the field as well as kick the association football ball
+282: the knave depart to the field and kick the association football ball
+283: the knave depart to the field & kick the association football ball
+284: the youngster depart to the field and kick the soccer ball
+285: the youngster depart to the field & kick the soccer ball
+286: the knave depart to the field as well as kick the soccer ball
+287: the knave depart to the field or kick the football ball
+288: the knave depart to the field or kick the association football ball
+289: the youngster depart to the field or kick the soccer ball
+290: the youngster depart to the field and kick the football ball
+291: the youngster depart to the field & kick the football ball
+292: the knave depart to the field as well as kick the football ball
+293: the youngster depart to the field and kick the association football ball
+294: the youngster depart to the field & kick the association football ball
+295: the knave depart to the field as well as kick the association football ball
+296: the youngster depart to the field as well as kick the soccer ball
+297: the youngster depart to the field or kick the football ball
+298: the youngster depart to the field or kick the association football ball
+299: the youngster depart to the field as well as kick the football ball
+300: the youngster depart to the field as well as kick the association football ball

@@ -1,0 +1,4 @@
+Alternative sentences for input sentence: 
+'The parking ticket my girlfriend got cost her 30 dollars.' -- elapsed time: 152.092984915 seconds.
+---------------------------------------------------------------------------------------
+1: the parking ticket my girlfriend get cost she 30 dollar

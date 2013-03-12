@@ -1,0 +1,99 @@
+Alternative sentences for input sentence: 
+'I do not have high hopes for some of these sentences.' -- elapsed time: 299.69274807 seconds.
+---------------------------------------------------------------------------------------
+1: i do no have high hope for few of these sentence
+2: i do not have high hope for few of these sentence
+3: i do be not have high hope for few of these sentence
+4: i do do not have high hope for few of these sentence
+5: i do no have high hope for few of these conviction
+6: i do not have high hope for few of these conviction
+7: i do need not have high hope for few of these sentence
+8: i do neither have high hope for few of these sentence
+9: i do nor have high hope for few of these sentence
+10: i do no have high hope for few of these verdict
+11: i do not have high hope for few of these verdict
+12: i do ai not have high hope for few of these sentence
+13: i do notwithstanding have high hope for few of these sentence
+14: i do be not have high hope for few of these conviction
+15: i do do not have high hope for few of these conviction
+16: i do would not have high hope for few of these sentence
+17: i do doe not have high hope for few of these sentence
+18: i do need not have high hope for few of these conviction
+19: i do neither have high hope for few of these conviction
+20: i do nor have high hope for few of these conviction
+21: i do be not have high hope for few of these verdict
+22: i do do not have high hope for few of these verdict
+23: i do will not have high hope for few of these sentence
+24: i do need not have high hope for few of these verdict
+25: i do neither have high hope for few of these verdict
+26: i do cannot have high hope for few of these sentence
+27: i do should not have high hope for few of these sentence
+28: i do nor have high hope for few of these verdict
+29: i do not guilty have high hope for few of these sentence
+30: i do ai not have high hope for few of these conviction
+31: i do not bad have high hope for few of these sentence
+32: i do notwithstanding have high hope for few of these conviction
+33: i do ai not have high hope for few of these verdict
+34: i do would not have high hope for few of these conviction
+35: i do doe not have high hope for few of these conviction
+36: i do notwithstanding have high hope for few of these verdict
+37: i do would not have high hope for few of these verdict
+38: i do will not have high hope for few of these conviction
+39: i do doe not have high hope for few of these verdict
+40: i do cannot have high hope for few of these conviction
+41: i do should not have high hope for few of these conviction
+42: i do not guilty have high hope for few of these conviction
+43: i do will not have high hope for few of these verdict
+44: i do not bad have high hope for few of these conviction
+45: i do cannot have high hope for few of these verdict
+46: i do should not have high hope for few of these verdict
+47: i do not guilty have high hope for few of these verdict
+48: i do not bad have high hope for few of these verdict
+49: i do no have high hope for some of these sentence
+50: i do not have high hope for some of these sentence
+51: i do be not have high hope for some of these sentence
+52: i do do not have high hope for some of these sentence
+53: i do no have high hope for some of these conviction
+54: i do not have high hope for some of these conviction
+55: i do need not have high hope for some of these sentence
+56: i do neither have high hope for some of these sentence
+57: i do nor have high hope for some of these sentence
+58: i do no have high hope for some of these verdict
+59: i do not have high hope for some of these verdict
+60: i do ai not have high hope for some of these sentence
+61: i do notwithstanding have high hope for some of these sentence
+62: i do be not have high hope for some of these conviction
+63: i do do not have high hope for some of these conviction
+64: i do would not have high hope for some of these sentence
+65: i do doe not have high hope for some of these sentence
+66: i do need not have high hope for some of these conviction
+67: i do neither have high hope for some of these conviction
+68: i do nor have high hope for some of these conviction
+69: i do be not have high hope for some of these verdict
+70: i do do not have high hope for some of these verdict
+71: i do will not have high hope for some of these sentence
+72: i do need not have high hope for some of these verdict
+73: i do neither have high hope for some of these verdict
+74: i do cannot have high hope for some of these sentence
+75: i do should not have high hope for some of these sentence
+76: i do nor have high hope for some of these verdict
+77: i do not guilty have high hope for some of these sentence
+78: i do ai not have high hope for some of these conviction
+79: i do not bad have high hope for some of these sentence
+80: i do notwithstanding have high hope for some of these conviction
+81: i do ai not have high hope for some of these verdict
+82: i do would not have high hope for some of these conviction
+83: i do doe not have high hope for some of these conviction
+84: i do notwithstanding have high hope for some of these verdict
+85: i do would not have high hope for some of these verdict
+86: i do will not have high hope for some of these conviction
+87: i do doe not have high hope for some of these verdict
+88: i do cannot have high hope for some of these conviction
+89: i do should not have high hope for some of these conviction
+90: i do not guilty have high hope for some of these conviction
+91: i do will not have high hope for some of these verdict
+92: i do not bad have high hope for some of these conviction
+93: i do cannot have high hope for some of these verdict
+94: i do should not have high hope for some of these verdict
+95: i do not guilty have high hope for some of these verdict
+96: i do not bad have high hope for some of these verdict

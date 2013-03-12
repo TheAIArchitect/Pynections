@@ -1,0 +1,503 @@
+Alternative sentences for input sentence: 
+'Coming up with test sentences is not easy.' -- elapsed time: 205.535582066 seconds.
+---------------------------------------------------------------------------------------
+1: come up w test sentence creature no easy
+2: come up w test sentence creature not easy
+3: come up w test sentence creature be not easy
+4: come up w test sentence creature do not easy
+5: come up w test sentence be no easy
+6: come up w test sentence be not easy
+7: come up w test conviction creature no easy
+8: come up w test conviction creature not easy
+9: come up w test sentence creature need not easy
+10: come up w test sentence creature neither easy
+11: come up w test sentence creature no soft
+12: come up w test sentence creature not soft
+13: come up w test sentence creature nor easy
+14: come up w test verdict creature no easy
+15: come up w test verdict creature not easy
+16: come up w test sentence creature ai not easy
+17: come up w test sentence creature notwithstanding easy
+18: come up w test sentence be be not easy
+19: come up w test conviction creature be not easy
+20: come up w test sentence be do not easy
+21: come up w test conviction creature do not easy
+22: come up w test sentence creature no fast
+23: come up w test sentence creature not fast
+24: come up w test conviction be no easy
+25: come up w test conviction be not easy
+26: come up w test sentence creature would not easy
+27: come up w test sentence creature doe not easy
+28: come up w test sentence creature be not soft
+29: come up w test sentence creature do not soft
+30: come up w test sentence be need not easy
+31: come up w test sentence be neither easy
+32: come up w test conviction creature need not easy
+33: come up w test conviction creature neither easy
+34: come up w test sentence creature no light
+35: come up w test sentence creature not light
+36: come up w test sentence be no soft
+37: come up w test sentence be not soft
+38: come up w test conviction creature no soft
+39: come up w test conviction creature not soft
+40: come up w test sentence be nor easy
+41: come up w test conviction creature nor easy
+42: come up w test verdict creature be not easy
+43: come up w test verdict creature do not easy
+44: come up w test sentence creature need not soft
+45: come up w test sentence creature neither soft
+46: come up w test verdict be no easy
+47: come up w test verdict be not easy
+48: come up w test sentence creature will not easy
+49: come up w test sentence creature nor soft
+50: come up w test verdict creature need not easy
+51: come up w test verdict creature neither easy
+52: come up w test sentence creature cannot easy
+53: come up w test sentence creature should not easy
+54: come up w test verdict creature no soft
+55: come up w test verdict creature not soft
+56: come up w test verdict creature nor easy
+57: come up w test sentence be ai not easy
+58: come up w test sentence creature not guilty easy
+59: come up w test conviction creature ai not easy
+60: come up w test sentence creature ai not soft
+61: come up w test sentence creature not bad easy
+62: come up w test sentence be notwithstanding easy
+63: come up w test conviction creature notwithstanding easy
+64: come up w test sentence creature be not fast
+65: come up w test verdict creature ai not easy
+66: come up w test sentence creature do not fast
+67: come up w test conviction be be not easy
+68: come up w test conviction be do not easy
+69: come up w test sentence be no fast
+70: come up w test sentence be not fast
+71: come up w test conviction creature no fast
+72: come up w test conviction creature not fast
+73: come up w test sentence creature notwithstanding soft
+74: come up w test sentence be would not easy
+75: come up w test sentence be doe not easy
+76: come up w test conviction creature would not easy
+77: come up w test conviction creature doe not easy
+78: come up w test sentence creature be not light
+79: come up w test sentence creature need not fast
+80: come up w test sentence be be not soft
+81: come up w test sentence creature neither fast
+82: come up w test sentence creature do not light
+83: come up w test conviction creature be not soft
+84: come up w test verdict creature notwithstanding easy
+85: come up w test sentence be do not soft
+86: come up w test conviction creature do not soft
+87: come up w test conviction be need not easy
+88: come up w test conviction be neither easy
+89: come up w test sentence be no light
+90: come up w test sentence be not light
+91: come up w test sentence creature nor fast
+92: come up w test conviction creature no light
+93: come up w test conviction creature not light
+94: come up w test conviction be no soft
+95: come up w test conviction be not soft
+96: come up w test sentence creature would not soft
+97: come up w test conviction be nor easy
+98: come up w test sentence creature doe not soft
+99: come up w test verdict be be not easy
+100: come up w test verdict be do not easy
+101: come up w test verdict creature no fast
+102: come up w test verdict creature not fast
+103: come up w test sentence creature need not light
+104: come up w test sentence creature neither light
+105: come up w test sentence be need not soft
+106: come up w test sentence be neither soft
+107: come up w test conviction creature need not soft
+108: come up w test conviction creature neither soft
+109: come up w test sentence be will not easy
+110: come up w test verdict creature would not easy
+111: come up w test conviction creature will not easy
+112: come up w test verdict creature doe not easy
+113: come up w test sentence creature nor light
+114: come up w test sentence be nor soft
+115: come up w test conviction creature nor soft
+116: come up w test verdict creature be not soft
+117: come up w test verdict creature do not soft
+118: come up w test verdict be need not easy
+119: come up w test verdict be neither easy
+120: come up w test sentence be cannot easy
+121: come up w test sentence be should not easy
+122: come up w test verdict creature no light
+123: come up w test verdict creature not light
+124: come up w test conviction creature cannot easy
+125: come up w test conviction creature should not easy
+126: come up w test sentence creature ai not fast
+127: come up w test verdict be no soft
+128: come up w test verdict be not soft
+129: come up w test sentence creature will not soft
+130: come up w test verdict be nor easy
+131: come up w test sentence be not guilty easy
+132: come up w test conviction be ai not easy
+133: come up w test conviction creature not guilty easy
+134: come up w test verdict creature need not soft
+135: come up w test verdict creature neither soft
+136: come up w test sentence creature cannot soft
+137: come up w test sentence creature should not soft
+138: come up w test verdict creature will not easy
+139: come up w test sentence creature ai not light
+140: come up w test verdict creature nor soft
+141: come up w test sentence be ai not soft
+142: come up w test sentence creature not guilty soft
+143: come up w test sentence be not bad easy
+144: come up w test conviction creature ai not soft
+145: come up w test conviction creature not bad easy
+146: come up w test sentence creature notwithstanding fast
+147: come up w test conviction be notwithstanding easy
+148: come up w test verdict creature cannot easy
+149: come up w test verdict creature should not easy
+150: come up w test sentence be be not fast
+151: come up w test verdict be ai not easy
+152: come up w test verdict creature not guilty easy
+153: come up w test conviction creature be not fast
+154: come up w test sentence be do not fast
+155: come up w test conviction creature do not fast
+156: come up w test sentence creature not bad soft
+157: come up w test sentence creature notwithstanding light
+158: come up w test conviction be no fast
+159: come up w test conviction be not fast
+160: come up w test sentence be notwithstanding soft
+161: come up w test conviction creature notwithstanding soft
+162: come up w test sentence creature would not fast
+163: come up w test sentence creature doe not fast
+164: come up w test conviction be would not easy
+165: come up w test conviction be doe not easy
+166: come up w test verdict creature ai not soft
+167: come up w test verdict creature not bad easy
+168: come up w test sentence be be not light
+169: come up w test sentence be need not fast
+170: come up w test conviction creature be not light
+171: come up w test sentence be neither fast
+172: come up w test conviction creature need not fast
+173: come up w test sentence be do not light
+174: come up w test conviction be be not soft
+175: come up w test conviction creature neither fast
+176: come up w test conviction creature do not light
+177: come up w test verdict be notwithstanding easy
+178: come up w test conviction be do not soft
+179: come up w test sentence be nor fast
+180: come up w test conviction be no light
+181: come up w test conviction be not light
+182: come up w test conviction creature nor fast
+183: come up w test verdict creature be not fast
+184: come up w test sentence creature would not light
+185: come up w test sentence creature doe not light
+186: come up w test sentence be would not soft
+187: come up w test verdict creature do not fast
+188: come up w test sentence be doe not soft
+189: come up w test conviction creature would not soft
+190: come up w test conviction creature doe not soft
+191: come up w test verdict be no fast
+192: come up w test verdict be not fast
+193: come up w test sentence be need not light
+194: come up w test sentence be neither light
+195: come up w test conviction creature need not light
+196: come up w test verdict creature notwithstanding soft
+197: come up w test conviction creature neither light
+198: come up w test sentence creature will not fast
+199: come up w test conviction be need not soft
+200: come up w test conviction be neither soft
+201: come up w test verdict be would not easy
+202: come up w test conviction be will not easy
+203: come up w test verdict be doe not easy
+204: come up w test sentence be nor light
+205: come up w test conviction creature nor light
+206: come up w test verdict creature be not light
+207: come up w test conviction be nor soft
+208: come up w test verdict creature need not fast
+209: come up w test verdict be be not soft
+210: come up w test verdict creature neither fast
+211: come up w test verdict creature do not light
+212: come up w test sentence creature cannot fast
+213: come up w test verdict be do not soft
+214: come up w test sentence creature should not fast
+215: come up w test verdict be no light
+216: come up w test verdict be not light
+217: come up w test conviction be cannot easy
+218: come up w test conviction be should not easy
+219: come up w test verdict creature nor fast
+220: come up w test sentence be ai not fast
+221: come up w test sentence creature not guilty fast
+222: come up w test conviction creature ai not fast
+223: come up w test sentence creature will not light
+224: come up w test sentence be will not soft
+225: come up w test verdict creature would not soft
+226: come up w test conviction creature will not soft
+227: come up w test conviction be not guilty easy
+228: come up w test verdict creature doe not soft
+229: come up w test verdict creature need not light
+230: come up w test verdict creature neither light
+231: come up w test verdict be need not soft
+232: come up w test verdict be neither soft
+233: come up w test sentence creature cannot light
+234: come up w test sentence creature should not light
+235: come up w test sentence be cannot soft
+236: come up w test sentence be should not soft
+237: come up w test verdict be will not easy
+238: come up w test conviction creature cannot soft
+239: come up w test conviction creature should not soft
+240: come up w test sentence creature not bad fast
+241: come up w test verdict creature nor light
+242: come up w test sentence be ai not light
+243: come up w test sentence creature not guilty light
+244: come up w test conviction creature ai not light
+245: come up w test verdict be nor soft
+246: come up w test sentence be not guilty soft
+247: come up w test conviction be ai not soft
+248: come up w test conviction creature not guilty soft
+249: come up w test conviction be not bad easy
+250: come up w test sentence be notwithstanding fast
+251: come up w test conviction creature notwithstanding fast
+252: come up w test verdict be cannot easy
+253: come up w test verdict be should not easy
+254: come up w test verdict creature ai not fast
+255: come up w test verdict creature will not soft
+256: come up w test verdict be not guilty easy
+257: come up w test conviction be be not fast
+258: come up w test sentence creature not bad light
+259: come up w test conviction be do not fast
+260: come up w test sentence be not bad soft
+261: come up w test conviction creature not bad soft
+262: come up w test sentence be notwithstanding light
+263: come up w test conviction creature notwithstanding light
+264: come up w test conviction be notwithstanding soft
+265: come up w test sentence be would not fast
+266: come up w test sentence be doe not fast
+267: come up w test verdict creature cannot soft
+268: come up w test conviction creature would not fast
+269: come up w test verdict creature should not soft
+270: come up w test conviction creature doe not fast
+271: come up w test verdict creature ai not light
+272: come up w test verdict be ai not soft
+273: come up w test verdict creature not guilty soft
+274: come up w test verdict be not bad easy
+275: come up w test verdict creature notwithstanding fast
+276: come up w test conviction be be not light
+277: come up w test conviction be need not fast
+278: come up w test conviction be neither fast
+279: come up w test conviction be do not light
+280: come up w test conviction be nor fast
+281: come up w test verdict be be not fast
+282: come up w test sentence be would not light
+283: come up w test sentence be doe not light
+284: come up w test conviction creature would not light
+285: come up w test conviction creature doe not light
+286: come up w test verdict be do not fast
+287: come up w test conviction be would not soft
+288: come up w test conviction be doe not soft
+289: come up w test verdict creature not bad soft
+290: come up w test verdict creature notwithstanding light
+291: come up w test conviction be need not light
+292: come up w test verdict be notwithstanding soft
+293: come up w test conviction be neither light
+294: come up w test sentence be will not fast
+295: come up w test verdict creature would not fast
+296: come up w test conviction creature will not fast
+297: come up w test verdict creature doe not fast
+298: come up w test conviction be nor light
+299: come up w test verdict be be not light
+300: come up w test verdict be need not fast
+301: come up w test verdict be neither fast
+302: come up w test verdict be do not light
+303: come up w test sentence be cannot fast
+304: come up w test sentence be should not fast
+305: come up w test conviction creature cannot fast
+306: come up w test conviction creature should not fast
+307: come up w test verdict be nor fast
+308: come up w test sentence be not guilty fast
+309: come up w test conviction be ai not fast
+310: come up w test conviction creature not guilty fast
+311: come up w test sentence be will not light
+312: come up w test verdict creature would not light
+313: come up w test conviction creature will not light
+314: come up w test verdict creature doe not light
+315: come up w test verdict be would not soft
+316: come up w test conviction be will not soft
+317: come up w test verdict be doe not soft
+318: come up w test verdict be need not light
+319: come up w test verdict be neither light
+320: come up w test verdict creature will not fast
+321: come up w test sentence be cannot light
+322: come up w test sentence be should not light
+323: come up w test conviction creature cannot light
+324: come up w test conviction creature should not light
+325: come up w test conviction be cannot soft
+326: come up w test conviction be should not soft
+327: come up w test sentence be not bad fast
+328: come up w test conviction creature not bad fast
+329: come up w test verdict be nor light
+330: come up w test sentence be not guilty light
+331: come up w test conviction be ai not light
+332: come up w test conviction creature not guilty light
+333: come up w test conviction be not guilty soft
+334: come up w test conviction be notwithstanding fast
+335: come up w test verdict creature cannot fast
+336: come up w test verdict creature should not fast
+337: come up with test sentence creature no easy
+338: come up with test sentence creature not easy
+339: come up w test verdict be ai not fast
+340: come up w test verdict creature not guilty fast
+341: come up w test verdict creature will not light
+342: come up w test verdict be will not soft
+343: come up w test sentence be not bad light
+344: come up w test conviction creature not bad light
+345: come up w test conviction be not bad soft
+346: come up w test conviction be notwithstanding light
+347: come up w test verdict creature cannot light
+348: come up w test verdict creature should not light
+349: come up w test verdict be cannot soft
+350: come up w test conviction be would not fast
+351: come up w test verdict be should not soft
+352: come up w test conviction be doe not fast
+353: come up w test verdict creature not bad fast
+354: come up w test verdict be ai not light
+355: come up w test verdict creature not guilty light
+356: come up w test verdict be not guilty soft
+357: come up w test verdict be notwithstanding fast
+358: come up w test conviction be would not light
+359: come up w test conviction be doe not light
+360: come up w test verdict creature not bad light
+361: come up w test verdict be not bad soft
+362: come up w test verdict be notwithstanding light
+363: come up w test verdict be would not fast
+364: come up w test conviction be will not fast
+365: come up w test verdict be doe not fast
+366: come up w test conviction be cannot fast
+367: come up w test conviction be should not fast
+368: come up w test conviction be not guilty fast
+369: come up w test verdict be would not light
+370: come up w test conviction be will not light
+371: come up w test verdict be doe not light
+372: come up w test verdict be will not fast
+373: come up w test conviction be cannot light
+374: come up w test conviction be should not light
+375: come up w test conviction be not bad fast
+376: come up w test conviction be not guilty light
+377: come up with test sentence creature be not easy
+378: come up with test sentence creature do not easy
+379: come up w test verdict be cannot fast
+380: come up w test verdict be should not fast
+381: come up with test sentence be no easy
+382: come up with test sentence be not easy
+383: come up w test verdict be not guilty fast
+384: come up with test conviction creature no easy
+385: come up with test conviction creature not easy
+386: come up w test verdict be will not light
+387: come up w test conviction be not bad light
+388: come up with test sentence creature need not easy
+389: come up with test sentence creature neither easy
+390: come up w test verdict be cannot light
+391: come up w test verdict be should not light
+392: come up with test sentence creature no soft
+393: come up with test sentence creature not soft
+394: come up w test verdict be not bad fast
+395: come up w test verdict be not guilty light
+396: come up with test sentence creature nor easy
+397: come up with test verdict creature no easy
+398: come up with test verdict creature not easy
+399: come up w test verdict be not bad light
+400: come up with test sentence creature ai not easy
+401: come up with test sentence creature notwithstanding easy
+402: come up with test sentence be be not easy
+403: come up with test conviction creature be not easy
+404: come up with test sentence be do not easy
+405: come up with test conviction creature do not easy
+406: come up with test sentence creature no fast
+407: come up with test sentence creature not fast
+408: come up with test conviction be no easy
+409: come up with test conviction be not easy
+410: come up with test sentence creature would not easy
+411: come up with test sentence creature doe not easy
+412: come up with test sentence creature be not soft
+413: come up with test sentence creature do not soft
+414: come up with test sentence be need not easy
+415: come up with test sentence be neither easy
+416: come up with test conviction creature need not easy
+417: come up with test conviction creature neither easy
+418: come up with test sentence creature no light
+419: come up with test sentence creature not light
+420: come up with test sentence be no soft
+421: come up with test sentence be not soft
+422: come up with test conviction creature no soft
+423: come up with test conviction creature not soft
+424: come up with test sentence be nor easy
+425: come up with test conviction creature nor easy
+426: come up with test verdict creature be not easy
+427: come up with test verdict creature do not easy
+428: come up with test sentence creature need not soft
+429: come up with test sentence creature neither soft
+430: come up with test verdict be no easy
+431: come up with test verdict be not easy
+432: come up with test sentence creature will not easy
+433: come up with test sentence creature nor soft
+434: come up with test verdict creature need not easy
+435: come up with test verdict creature neither easy
+436: come up with test sentence creature cannot easy
+437: come up with test sentence creature should not easy
+438: come up with test verdict creature no soft
+439: come up with test verdict creature not soft
+440: come up with test verdict creature nor easy
+441: come up with test sentence be ai not easy
+442: come up with test sentence creature not guilty easy
+443: come up with test conviction creature ai not easy
+444: come up with test sentence creature ai not soft
+445: come up with test sentence creature not bad easy
+446: come up with test sentence be notwithstanding easy
+447: come up with test conviction creature notwithstanding easy
+448: come up with test sentence creature be not fast
+449: come up with test verdict creature ai not easy
+450: come up with test sentence creature do not fast
+451: come up with test conviction be be not easy
+452: come up with test conviction be do not easy
+453: come up with test sentence be no fast
+454: come up with test sentence be not fast
+455: come up with test conviction creature no fast
+456: come up with test conviction creature not fast
+457: come up with test sentence creature notwithstanding soft
+458: come up with test sentence be would not easy
+459: come up with test sentence be doe not easy
+460: come up with test conviction creature would not easy
+461: come up with test conviction creature doe not easy
+462: come up with test sentence creature be not light
+463: come up with test sentence creature need not fast
+464: come up with test sentence be be not soft
+465: come up with test sentence creature neither fast
+466: come up with test sentence creature do not light
+467: come up with test conviction creature be not soft
+468: come up with test verdict creature notwithstanding easy
+469: come up with test sentence be do not soft
+470: come up with test conviction creature do not soft
+471: come up with test conviction be need not easy
+472: come up with test conviction be neither easy
+473: come up with test sentence be no light
+474: come up with test sentence be not light
+475: come up with test sentence creature nor fast
+476: come up with test conviction creature no light
+477: come up with test conviction creature not light
+478: come up with test conviction be no soft
+479: come up with test conviction be not soft
+480: come up with test sentence creature would not soft
+481: come up with test conviction be nor easy
+482: come up with test sentence creature doe not soft
+483: come up with test verdict be be not easy
+484: come up with test verdict be do not easy
+485: come up with test verdict creature no fast
+486: come up with test verdict creature not fast
+487: come up with test sentence creature need not light
+488: come up with test sentence creature neither light
+489: come up with test sentence be need not soft
+490: come up with test sentence be neither soft
+491: come up with test conviction creature need not soft
+492: come up with test conviction creature neither soft
+493: come up with test sentence be will not easy
+494: come up with test verdict creature would not easy
+495: come up with test conviction creature will not easy
+496: come up with test verdict creature doe not easy
+497: come up with test sentence creature nor light
+498: come up with test sentence be nor soft
+499: come up with test conviction creature nor soft
+500: come up with test verdict creature be not soft
