@@ -41,16 +41,16 @@ if __name__ == "__main__":
     s10 = "I hope my train is on time today."
     s11 = "Testing these sentences will take a long time."
     s12 = "I do not have high hopes for some of these sentences."
-    s13 = "Big and sturdy wooden desks are nice to work on, and to prop your feet on."
+    s13 = "Big and sturdy wooden desks are nice to work on, and to prop your feet on." # This sentence is omitted, because it took over an hour to run, and crashed my Eclipse
     s14 = "The parking ticket my girlfriend got cost her 30 dollars."
     s15 = "Parking tickets make people very unhappy."
-    original_sents = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15]
-    file_names = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s14","s15"]
+    original_sents = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s14, s15]
+    file_names = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s14","s15"]
     time_taken = 0
     num_original_sents = len(original_sents)
     the_launcher  =  launcher()
     
-    for sent_number in range(14,num_original_sents):
+    for sent_number in range(0,num_original_sents):
         start_time = time.time()
         new_sents = the_launcher.run(original_sents[sent_number])
         end_time = time.time()
